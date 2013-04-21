@@ -115,10 +115,11 @@ h2 {
 
 #correction, #solution {
 	font-size:1.6em;
-	margin-top:0.5em;
+	padding-top:1.5em;
 	padding-bottom:1.5em;
 	padding-right:1.5em;
-	padding-left:0.5em;	
+	padding-left:0.5em;
+	border-top:dotted thick #66CCFF;	
 }
 
 #dictee {
@@ -166,7 +167,6 @@ fieldset {
 }
 
 #section_2, #section_3 {
-	border-top:dotted thick #66CCFF;
 	margin-left:3em;
 }
 

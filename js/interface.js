@@ -109,11 +109,6 @@ $("#accueil").fadeIn(2000, function() {
 });
 
 
-	// Position du curseur dans le texte : variable globale position
-	$("#texte").click(function(){
-		position = $("#texte").caret();
-	}); 
-
 	// Caractères spéciaux	
 	
 	$(".spec").click(function(){
