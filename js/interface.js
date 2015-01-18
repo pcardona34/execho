@@ -1,8 +1,8 @@
 /* 
  * interface.js
  * 
- * ( c ) 2012 Patrick Cardona
- * Dicto version 1.1.0
+ * ( c ) 2012-2015 Patrick Cardona
+ * Dicto version 1.2.0 - AMB Project
  * Gestion des événements de l'interface
  *
  */
@@ -85,7 +85,8 @@ $(document).ready(function(){
 	// On masque le bouton recommencer
 	$("#section_4").hide();
 	
-	// Animation de l'écran d'accueil
+	// Animation de l'écran d'accueil : désactivée.
+/* Désactivation - début
 $("#accueil").hide();
 $("#accueil").fadeIn(2000, function() {
 	$(this).animate(
@@ -107,7 +108,7 @@ $("#accueil").fadeIn(2000, function() {
 					}
 			});
 });
-
+Désactivation - fin */
 
 	// Caractères spéciaux	
 	
