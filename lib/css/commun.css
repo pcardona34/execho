@@ -1,20 +1,20 @@
-/* 
+/*
  * commun.css
- * 
+ *
  * Feuille de style de l'accueil et de la licence de Reperage :
  *  cf. index.html et licence.html
  * ( c ) 2012 Patrick Cardona
  * Version : 1.2.0
- * 
+ *
  * @source: http://code.google.com/p/reperage/
- * 
+ *
  */
 
 /* =================================================================== */
 /* LICENCE
 /* =================================================================== */
 /*
-@licstart  The following is the entire license notice for the 
+@licstart  The following is the entire license notice for the
     CSS code in this page.
 
 Copyright (C) 2012  Patrick CARDONA - Reperage
@@ -32,9 +32,9 @@ Copyright (C) 2012  Patrick CARDONA - Reperage
     that code without the copy of the GNU GPL normally required by
     section 4, provided you include this license notice and a URL
     through which recipients can access the Corresponding Source.
-    
+
 @licend  The above is the entire license notice
-    for the CSS code in this page.    
+    for the CSS code in this page.
 */
 
 #wrapper {
@@ -147,6 +147,7 @@ code {
 
 a,a:visited{
 	color:#1E90FF;
+  text-decoration:none;
 }
 
 a:hover{

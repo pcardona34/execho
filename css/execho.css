@@ -1,6 +1,6 @@
 /*
  * execho.css
- *  
+ *
  * ( c ) 2012 Patrick Cardona
  * Execho
  */
@@ -9,7 +9,7 @@
 /* LICENCE
 /* =================================================================== */
 /*
-@licstart  The following is the entire license notice for the 
+@licstart  The following is the entire license notice for the
     CSS code in this page.
 
 Copyright (C) 2012-2013  Patrick CARDONA - execho
@@ -27,9 +27,9 @@ Copyright (C) 2012-2013  Patrick CARDONA - execho
     that code without the copy of the GNU GPL normally required by
     section 4, provided you include this license notice and a URL
     through which recipients can access the Corresponding Source.
-    
+
 @licend  The above is the entire license notice
-    for the CSS code in this page.    
+    for the CSS code in this page.
 */
 
 body {
@@ -41,52 +41,11 @@ body {
 	text-align: center;
 }
 
-header {
-	padding:0.1em;
-	margin-left:2em;
-	margin-right:2em;
-	background-color:#CCCCCC;
-	font-size:0.8em;
-	-moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-    box-shadow:
-	0px 2px 2px 0px rgba(0, 0, 0, 0.5),
-	0px 2px 2px 0px rgba(255, 255, 255, 0.5);	
-}
 
-#cadre_prof {
-	text-align:right;
-	margin-top:0.25em;
-	margin-right:4em;
-	margin-bottom:3em;
-	color:#66CCFF;
-	font-size: 0.8em;
-	font-weight: bold;	
-}
-
-#cadre_bib {
-	text-align:left;
-	font-size:1em;
-}
 
 section {
 	margin-left:3em;
-	margin-right:2em;	
-}
-
-aside {
-	margin-left:1em;
-		
-}
-
-footer {
-	margin-top:1em;
-	border-top: solid #CCCCCC 2px;
-	color:#999999;
-	font-size:0.8em;
-	text-align:center;	
+	margin-right:2em;
 }
 
 h1, h2 {
@@ -94,76 +53,59 @@ h1, h2 {
 }
 
 h1 {
-	font-size:1.4em;	
+	font-size:1.2em;
 }
 
 h2 {
-	color:#66CCFF;
-	font-size:1.1em;	
+	color:grey;
+	font-size:1.1em;
 }
 
 #titre_principal {
-	color:#666666;
-	text-align:center;	
+	color:grey;
+	text-align:center;
 }
 
-#bib {
-	margin-left:2em;
-	font-size:1.2em;
-	color:#808080;
-}
 
 #correction, #solution {
-	font-size:1.6em;
+	font-size:1em;
 	padding-top:1.5em;
 	padding-bottom:1.5em;
 	padding-right:1.5em;
 	padding-left:0.5em;
-	border-top:dotted thick #66CCFF;	
+	border-top:dotted thick grey;
 }
 
 #dictee {
-	font-size:1.2em;	
+	font-size:1em;
 }
 
 del {
-	color:red;	
+	color:red;
 }
 
 ins {
-	color:green;	
+	color:green;
 }
 
 #auteur {
-	font-variant:small-caps;	
+	font-variant:small-caps;
 }
 
 #ouvrage {
-	font-style:italic;	
+	font-style:italic;
 }
 
 #ecrire {
-		background-color:#CCCCCC;
-}
-
-
-textarea, fieldset {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+		background-color:white;
 }
 
 textarea#texte {
-	font-size: 1.2em;
-}
-
-fieldset {
-	padding:1em;
-		
+	font-size: 1.1em;
 }
 
 #section_1, #section_1_bis {
-	clear:both;	
+	clear:both;
 }
 
 #section_2, #section_3 {
@@ -171,10 +113,10 @@ fieldset {
 }
 
 #section_4 {
-	text-align:center;	
+	text-align:center;
 }
 
-.reprendre {
+/*.reprendre {
 	padding-left:3.5em;
 	background-image:url("../img/reprendre.png");
 	background-repeat:no-repeat;
@@ -184,28 +126,28 @@ fieldset {
 	padding-left:3.5em;
 	background-image:url("../img/recommencer.png");
 	background-repeat:no-repeat;
-}
+}*/
 
 input[type="submit"]:hover, a[title="donnees"]:hover{
-	background-color:#1E90FF;
+	background-color:whitesmoke;
+  box-shadow:
+  0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+  0px 2px 2px 0px rgba(255, 255, 255, 0.5);
 }
 
 input[type="submit"], a[title="donnees"]{
-	background-color:#886699;
-	color:white;
+	background-color:whitesmoke;
+	color:grey;
 	font-size:0.9em;
 	padding-right:0.7em;
 	padding-top:0.7em;
-	padding-bottom:0.7em;
+	padding-bottom:0.3em;
 	cursor: pointer;
-	border:none;
+	border:thin grey solid;
 	-moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
-    box-shadow:
-	0px 2px 2px 0px rgba(0, 0, 0, 0.5),
-	0px 2px 2px 0px rgba(255, 255, 255, 0.5);   
 }
 
 
@@ -220,5 +162,3 @@ input[type="submit"], a[title="donnees"]{
 	0px 2px 2px 0px rgba(0, 0, 0, 0.5),
 	0px 2px 2px 0px rgba(255, 255, 255, 0.5);
 }
-
-

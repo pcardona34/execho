@@ -1,6 +1,6 @@
-/* 
+/*
  * interface.js
- * 
+ *
  * ( c ) 2012-2015 Patrick Cardona
  * Dicto version 1.2.0 - AMB Project
  * Gestion des événements de l'interface
@@ -11,7 +11,7 @@
 /* LICENCE
 /* =================================================================== */
 /*
-@licstart  The following is the entire license notice for the 
+@licstart  The following is the entire license notice for the
     JavaScript code in this page.
 
 Copyright (C) 2012  Patrick CARDONA - A propos
@@ -29,9 +29,9 @@ Copyright (C) 2012  Patrick CARDONA - A propos
     that code without the copy of the GNU GPL normally required by
     section 4, provided you include this license notice and a URL
     through which recipients can access the Corresponding Source.
-    
+
 @licend  The above is the entire license notice
-    for the JavaScript code in this page.    
+    for the JavaScript code in this page.
 */
 
 /* ***************************************** */
@@ -41,7 +41,7 @@ Copyright (C) 2012  Patrick CARDONA - A propos
 
 // On définit une variable globale pour la position du curseur dans le texte
 var position = 0;
-	
+
 // création objet echo
 var echo = new oEcho();
 // On charge les données de cet exercice à partir du fichier data.json
@@ -54,7 +54,7 @@ var echo = new oEcho();
 			echo.auteur = data.auteur;
 			echo.ouvrage = data.ouvrage;
 			echo.consigne = data.consigne;
-			
+
 			// On actualise les étiquettes à afficher dans l'interface
 			$("#titre_principal").html( echo.titre );
 			$("#prof").append( echo.prof );
@@ -63,18 +63,18 @@ var echo = new oEcho();
 			$("#auteur").html( echo.auteur );
 			// Zone de texte :
 			$("#texte").html( echo.texte );
-	
-			
-            
-        
+
+      // var ok = generate ('success', 'Le fichier de données a correctement été chargé.');
+
+
 		}
 		else{
-			jAlert("<p>Une erreur s'est produite : le fichier de données n'est pas conforme.")
+			var erreur = generate ('error', 'Erreur : le fichier de données comporte une erreur.');
 		}
 	});
 
 $(document).ready(function(){
-	
+
 	/*
 	 * Etat de l'interface par défaut :
 	 */
@@ -84,7 +84,12 @@ $(document).ready(function(){
 	$("#section_3").hide();
 	// On masque le bouton recommencer
 	$("#section_4").hide();
-	
+  // Le résumé des outils utilisés dans le logiciel est résumé dans apropos.js
+  var msg = apropos.affiche();
+  $("#licence").append(msg);
+  // Le texte légal se situe dans le fichier lic.js
+  $("#licence").append(lic);
+
 	// Animation de l'écran d'accueil : désactivée.
 /* Désactivation - début
 $("#accueil").hide();
@@ -104,40 +109,33 @@ $("#accueil").fadeIn(2000, function() {
     						$(this).fadeOut(500);
 							}
 						});
-				
+
 					}
 			});
 });
 Désactivation - fin */
 
-	// Caractères spéciaux	
-	
+	// Caractères spéciaux
+
 	$(".spec").click(function(){
-			var carspec = $(this).text();			
+			var carspec = $(this).text();
 			insertion(carspec);
 			e.preventDefault();
 		});
-	
-	
-	// Aide contextuelle
-	$(".aide").click(function(e){
-			jAlert ("Placez le curseur à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.","Aide : insertion de caractères");
-			e.preventDefault();
-		});
-		
-	/*
-	 * Licence
-	 */
-	$("a[title='Licence']").click(function(){
-		jAlert(lic,"Licence");
-		e.preventDefault();
-	});
-	
-	// Gestion des boutons 
+
+
+		// Gestion des boutons
 	$("input:submit").click(function(e){
 		var instruction = $(this).val();
 		switch ( instruction ){
-			
+
+			case "Aide":
+				// Aide contextuelle
+					var info = generate('information', "<p>Placez le curseur à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.&nbsp;&nbsp;&otimes;</p>");
+			break;
+
+
+
 			case "Corriger le texte":
 				echo.saisie = $("#texte").val();
 				if(echo.saisie.length > 0){
@@ -147,14 +145,14 @@ Désactivation - fin */
 						$("#section_2").show();
 						$("#section_1").hide();
 						$("#section_1_bis").hide();
-						$("#section_4").show();	
+						$("#section_4").show();
 					}
 				}else{
 					jAlert("Veuillez d'abord saisir le texte.","Erreur : aucun texte saisi");
 					return false;
 				}
 			break;
-			
+
 			case "Afficher la solution":
 				$("#solution").html( echo.affiche() );
 				$("#section_3").show();
@@ -163,20 +161,35 @@ Désactivation - fin */
 				$("#section_2").hide();
 				$("#section_4").show();
 			break;
-			
+
 			case "Recommencer":
-				jConfirm('Voulez-vous vraiment tout recommencer ?', 'Recommencer ?', function(r) {
-					if(r){
-						$("#texte").val( echo.texte );
-						$("#section_2").hide();
-						$("#section_3").hide();
-						$("#section_4").hide();
-						$("#section_1").show();
-						$("#section_1_bis").show();
-					}
-				});	
+
+        noty({
+          text: 'Voulez-vous vraiment tout recommencer ?',
+          buttons: [
+          {addClass: 'btn btn-primary', text: 'Ok', onClick: function($noty) {
+
+          // this = button element
+          // $noty = $noty element
+
+              $noty.close();
+              $("#texte").val( echo.texte );
+              $("#section_2").hide();
+              $("#section_3").hide();
+              $("#section_4").hide();
+              $("#section_1").show();
+              $("#section_1_bis").show();
+            }
+          },
+				{addClass: 'btn btn-danger', text: 'Annuler', onClick: function($noty) {
+            $noty.close();
+            // on continue
+          }
+        }
+        ]
+      });
 			break;
-			
+
 			case "Reprendre":
 				$("#section_2").hide();
 				$("#section_3").hide();
@@ -184,9 +197,9 @@ Désactivation - fin */
 				$("#section_1").show();
 				$("#section_1_bis").show();
 			break;
-			
+
 			default:
-			jAlert ( "Aucune action définie !");	
+			var erreur = generate ('error', "Aucune action définie !");
 		}
 		e.preventDefault(); // pour empêcher la soumission effective du formulaire.
 	});
