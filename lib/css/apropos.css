@@ -1,21 +1,21 @@
-/* 
+/*
  * apropos.css
- * 
+ *
  * Feuille de style de A propos :  cf. apropos.js
  * ( c ) 2012 Patrick Cardona
  * Version : 1.0.0
- * 
+ *
  * @source: http://code.google.com/p/reperage/
- * 
+ *
  */
 
 
- 
+
 /* =================================================================== */
 /* LICENCE
 /* =================================================================== */
 /*
-@licstart  The following is the entire license notice for the 
+@licstart  The following is the entire license notice for the
     CSS code in this page.
 
 Copyright (C) 2012  Patrick CARDONA - A propos
@@ -33,9 +33,9 @@ Copyright (C) 2012  Patrick CARDONA - A propos
     that code without the copy of the GNU GPL normally required by
     section 4, provided you include this license notice and a URL
     through which recipients can access the Corresponding Source.
-    
+
 @licend  The above is the entire license notice
-    for the CSS code in this page.    
+    for the CSS code in this page.
 */
 
 p.apropos {
@@ -47,27 +47,28 @@ p.apropos {
 ul li.apropos {
 	margin-top:0.5em;
 	margin-left:3em;
-	padding:0.4em;	
+	padding:0.4em;
 }
 
 li.apropos a {
-	color:blue;	
+	color:blue;
+  text-decoration:none;	
 }
 
 li.apropos a:hover {
-	color:red;	
+	color:blue;
 }
 
 h1.apropos {
 	text-align:center;
 	color:#999;
 	font-family:Arial,Helvetica,"Sans serif";
-	font-size:1.2em;	
+	font-size:1.2em;
 }
 
 h2.apropos {
 	text-align:center;
 	color:#999;
 	font-family:Arial,Helvetica,"Sans serif";
-	font-size:0.8em;	
+	font-size:0.8em;
 }
