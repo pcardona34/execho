@@ -14,6 +14,10 @@
 		<!-- CSS de l'exercice -->
 		<link href="css/execho.css" rel="stylesheet" type="text/css" />
 		<style>
+			body{
+				font-size:0.8em;
+			}
+
 			.noty_text{
 				font-family: sans-serif;
 				font-size:1.2em;
@@ -129,6 +133,14 @@
 
 			<!-- Annexes -->
 
+			<div id="section_4">
+				<form>
+					<input type="submit" value="Reprendre" class="reprendre" />
+					&nbsp;&nbsp;&nbsp;
+					<input type="submit" value="Recommencer" class="recommencer" />
+				</form>
+			</div>
+			
 				<div id="section_2">
 					<h2>Correction</h2>
 					<div id="correction">Ici, texte corrigé</div>
@@ -139,13 +151,7 @@
 					<div id="solution">Ici, solution</div>
 				</div>
 
-				<div id="section_4">
-					<form>
-						<input type="submit" value="Reprendre" class="reprendre" />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="submit" value="Recommencer" class="recommencer" />
-					</form>
-				</div>
+
 
 
 
@@ -185,6 +191,7 @@
 		<!-- Scripts liés à cette page -->
 	<script src="js/execho.js"></script>
 		<script src="lib/js/lic.js"></script>
-		<script src="js/interface.js"></script>
+		<!-- Version interface adaptée à Moodle -->
+		<script src="js/m_interface.js"></script>
 	</body>
 </html>
