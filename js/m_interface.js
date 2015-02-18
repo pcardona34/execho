@@ -78,6 +78,9 @@ $(document).ready(function(){
 	/*
 	 * Etat de l'interface par défaut :
 	 */
+	// On masque le titre principal : il sera affiché dans le titre de la ressource Moodle
+	$("#titre_principal").hide();
+
 	// On masque la section de correction
 	$("#section_2").hide();
 	// On masque la section de solution
