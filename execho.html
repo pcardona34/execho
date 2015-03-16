@@ -1,67 +1,50 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
+
+<!--
+
+Jecho
+
+( c ) 2012-2015 - Patrick Cardona
+Version 3.0
+Mailto : pcardona34@gmail.com
+
+en : a Rewriting Exercise
+fr : un Exercice de réécriture
+
+i18n :
+Abstract: now, Jecho can display the exercise in english, french (default),
+spanich, catalan, italian or german.
+To get the desired translation, just call execho.html with the lang parameter.
+
+@param : lang
+@value : cat|de|en|es|fr|it
+Default value: fr
+Syntaxis : *//Your_server/execho.html?lang=en
+
+Data file :
+The default data file is called data.json and it is in the same folder as
+execho.html.
+To override this file and getting your own, just use the urljson parameter.
+
+@param : urljson
+@value : URI of your_file.json
+To create some new data file, see JDicto.
+Default value : data.json
+Syntaxis : *//Your_server/execho.html?urljson=your_file.json
+You can use absolute or relative path for this value.
+
+-->
+
 
 	<head>
 		<meta charset="utf-8">
 
 		<title>Exercice</title>
 
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- CSS partagée : dictée + générateur -->
-		<link href="lib/css/apropos.css" rel="stylesheet" type="text/css" />
-		<link href="lib/css/carspec.css" type="text/css" rel="stylesheet" />
-		<!-- CSS de l'exercice -->
 		<link href="css/execho.css" rel="stylesheet" type="text/css" />
-		<style>
-			.noty_text{
-				font-family: sans-serif;
-				font-size:1.2em;
-			}
-		</style>
-
-
-		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-<script>
-		// Tabulations
-		$(function() {
-			$( "#tabs" ).tabs();
-		});
-
-		// Notifications
-		function generate(type, text) {
-			var n = noty({
-				text        : text,
-				type        : type,
-				dismissQueue: false,
-				layout      : 'top',
-				theme       : 'relax'
-			});
-			console.log(type + ' - ' + n.options.id);
-			return n;
-		}
-
-		// Caractères spéciaux
-		function insertion(car) {
-			var input = document.forms['formulaire'].elements['texte'];
-			input.focus();
-
-			if(typeof input.selectionStart != 'undefined')
-			{
-			// Insertion du code
-			var start = input.selectionStart;
-			var end = input.selectionEnd;
-			var insText = input.value.substring(start, end);
-			input.value = input.value.substr(0, start) + car + input.value.substr(end);
-			// Ajustement de la position du curseur
-			var pos;
-			pos = start + car.length;
-			input.selectionStart = pos;
-			input.selectionEnd = pos;
-			}
-		}
-</script>
 
 	</head>
 
@@ -69,123 +52,146 @@
 
 	<!-- Si Javascript n'est pas autorisé ou supporté... -->
 	<noscript>
-		<h1>Erreur !</h1>
-		<p>Votre navigateur ne prend pas en charge l'exécution de scripts.
+		<h1 lang="fr">Erreur !</h1>
+		<p lang="fr">Votre navigateur ne prend pas en charge l'exécution de scripts.
 			Veuillez autoriser l'exécution de JavaScript ou employer un navigateur adapté.</p>
+		<h1 lang="en">Error !</h1>
+		<p lang="en">Your browser does not support script execution. Please enable JavaScript execution or use a suitable browser.</p>
 	</noscript>
 
+	<!-- Conteneur -->
+	<div id="conteneur">
+
 	<!-- Corps de l'appli -->
-		<div>
-			<h1 id="titre_principal">Titre de l'exercice</h1>
+	<header>
+		<div id="titre_principal">Titre de l'exercice</div>
+
+		<div id="notifications">
+			<div class="message">&nbsp;</div>
+			<div class="bandeau">&otimes;</div>
+			<div class="confirmation">
+			<button type="button" id="cancel">&nbsp;</button>
+			&nbsp;<button type="button" id="ok">&nbsp;</button></div>
 		</div>
 
-		<div id="notifications"><div>
 
-		<div id="tabs">
-			<ul>
-				<li><a href="#tabs-1">Consigne</a></li>
-				<li><a href="#tabs-2">Exercice</a></li>
-				<li><a href="#tabs-3">Mentions légales</a></li>
-				<li><a href="#tabs-4">Licence</a></li>
-			</ul>
-			<div id="tabs-1">
+	<nav>
+		<menu>
+		<div id="onglets">
+
+				<div class="normal" id="lien_consigne">&nbsp;</div>
+				<div class="normal" id="lien_exercice">&nbsp;</div>
+				<div class="normal" id="lien_mentions">&nbsp;</div>
+   </div>
+		</menu>
+	</nav>
+</header>
+
+<section>
+
+			<div id="onglet_consigne">
 				<div id="section_1">
-					<div id="consigne">
-						&nbsp;
-					</div>
-
+					<div id="consigne">&nbsp;</div>
 				</div>
 			</div>
-			<div id="tabs-2">
+
+
+			<div id="onglet_exercice">
+
 				<div id="section_1_bis">
 					<!-- Formulaire de saisie du texte de l'exercice -->
+						<div id="table_spec">
+							<div>
+
+							<ul class="entete">
+
+								<!--	les caractères spéciaux sont générés par le script -->
+								<template id="row">
+   								<li class="spec"></li>
+  							</template>
+
+							</ul>
+
+							<ul class="entete">
+
+								<!--	les caractères spéciaux sont générés par le script -->
+								<template id="row_deux">
+   								<li class="spec"></li>
+  							</template>
+
+							</ul>
+
+							<ul class="entete">
+
+								<!--	les caractères spéciaux sont générés par le script -->
+								<template id="row_trois">
+   								<li class="spec"></li>
+  							</template>
+
+							</ul>
+
+							<ul id="actions">
+								<li id="car_sel">&nbsp;</li>
+								<li id="boutons">&nbsp;</li>
+							</ul>
+
+						</div>
+
+					</div>
+					<div id="texte" contentEditable="true">&nbsp;</div>
+					</div>
 
 
-					<form name="formulaire">
-
-						<table id="table_spec">
-							<tr class="entete">
-								<td class="spec">«</td>
-								<td class="spec">—</td>
-								<td class="spec">»</td>
-								<td class="spec">&hellip;</td>
-								<td class="spec">œ</td>
-								<td class="spec">Œ</td>
-								<td class="spec">É</td>
-								<td class="spec">À</td>
-								<td>
-									<input type="submit" value="Aide" />
-									&nbsp;<input type="submit" value="Corriger le texte" />
-									&nbsp;<input type="submit" value="Afficher la solution" />
-									</td>
-								</tr>
-								<tr><td colspan="9"><textarea id="texte" name="texte" cols="80" rows="10"></textarea></td></tr>
-						</table>
-
-
-
-					</form>
-				</div>
 
 
 			<!-- Annexes -->
 
 				<div id="section_2">
-					<h2>Correction</h2>
-					<div id="correction">Ici, texte corrigé</div>
+					<h2>&nbsp;</h2>
+					<div id="correction">&nbsp;</div>
 				</div>
 
 				<div id="section_3">
-					<h2>Solution</h2>
-					<div id="solution">Ici, solution</div>
+					<h2>&nbsp;</h2>
+					<div id="solution">&nbsp;</div>
 				</div>
 
 				<div id="section_4">
-					<form>
-						<input type="submit" value="Reprendre" class="reprendre" />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="submit" value="Recommencer" class="recommencer" />
-					</form>
-				</div>
 
-
-
-			</div>
-			<div id="tabs-3">
-				<p>D'après <span id="auteur">Anonyme</span>, <span id="ouvrage">?</span>.</p>
-				<p id="prof">Exercice conçu par </p>
-
+						<button type="button" id="reprendre" class="reprendre">&nbsp;</button>
+						&nbsp;
+						<button type="button" id="recommencer" class="recommencer">&nbsp;</button>
 
 				</div>
-
-				<div id="tabs-4">
-					<div id="section_5">
-						<div id="licence">
-							&nbsp;
-						</div>
-
-					</div>
-				</div>
-
 		</div>
 
+		<!-- Mentions légale -->
+			<div id="onglet_mentions">
+				<div>
+					<p>
+						<span id="intro_auteur">&nbsp;</span>
+						<span id="auteur">&nbsp;</span>,&nbsp;
+						<span id="ouvrage">?</span>.
+					</p>
+					<p>
+						<span id="intro_prof">&nbsp;</span>
+						<span id="prof">&nbsp;</span>.
+					</p>
+				</div>
+			</div>
 
-	<!-- Chargement optimisé des librairies Javascript en fin de page -->
-	<!-- Lib JavaScript génériques ou partagées : dictée + générateur -->
+</section>
 
 
-	<script src="js/jquery.noty.packaged.js"></script>
+<footer>
+	<p>&copy;2012-2015 Jecho - Patrick Cardona</p>
+</footer>
 
+</div> <!-- fin du conteneur-->
 
-		<!-- Lib liées à cette page -->
-	<script src="js/jsdiff.js"></script>
+<!-- Chargement optimisé des librairies Javascript en fin de page -->
+		<script src="js/lib/jsdiff.js"></script>
+	  <script src="js/execho.js" defer></script>
 
-		<!-- Scripts partagés -->
-		<script src="lib/js/apropos.js"></script>
-
-		<!-- Scripts liés à cette page -->
-	<script src="js/execho.js"></script>
-		<script src="lib/js/lic.js"></script>
-		<script src="js/interface.js"></script>
 	</body>
 </html>
