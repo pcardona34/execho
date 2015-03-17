@@ -15,9 +15,9 @@
     "BTN_CANCEL": "Non",
     "BTN_OK": "Oui",
     "BTN_AIDE": "Aide",
-    "BTN_CORRIGER": "Corriger le texte",
+    "BTN_CORRIGER": "Corriger",
     "BTN_INSERER": "Insérer",
-    "BTN_SOLUTION": "Afficher la solution",
+    "BTN_SOLUTION": "Solution",
     "BTN_REPRENDRE": "Reprendre",
     "BTN_RECOMMENCER": "Recommencer",
     "tableau_carspec": [
