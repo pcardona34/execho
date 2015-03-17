@@ -15,10 +15,10 @@
     "BTN_CANCEL": "No.",
     "BTN_OK": "Sí",
     "BTN_AIDE": "Ajuda",
-    "BTN_CORRIGER": "Text correcta",
+    "BTN_CORRIGER": "Examini",
     "BTN_INSERER": "Insereix",
-    "BTN_SOLUTION": "Mostra solució",
-    "BTN_REPRENDRE": "Resumeix",
+    "BTN_SOLUTION": "Solució",
+    "BTN_REPRENDRE": "Retorn",
     "BTN_RECOMMENCER": "Inici",
     "tableau_carspec": [
       "«",

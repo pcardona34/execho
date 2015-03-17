@@ -85,7 +85,7 @@ Copyright (C) 2012-2015  Patrick CARDONA - JECHO
 }
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 641px) {
 
 	body {
 		font-size:16px;
@@ -338,7 +338,7 @@ Copyright (C) 2012-2015  Patrick CARDONA - JECHO
 /* Mobile CSS begins here */
 /* Début de la feuille de style pour mobile ici */
 
-	@media (max-width: 640px) {
+	@media (max-width: 769px) {
 	    * {
 	        -webkit-box-sizing: border-box;
 	           -moz-box-sizing: border-box;
@@ -351,73 +351,29 @@ Copyright (C) 2012-2015  Patrick CARDONA - JECHO
 	        width: auto;
 	        margin: 0;
 	        padding: 0;
-	    }
-
-	    /* fixer une largeur maximale de 100% aux éléments potentiellement problématiques */
-
-	    img,
-	    table,
-	    td,
-	    textarea,
-	    input,
-	    iframe,
-	    object,
-	    embed,
-	    video {
-	        max-width: 100%;
-	    }
-
-	    /* conserver le ratio des images */
-
-	    img {
-	        height: auto;
-	    }
-
-	    /* gestion des mots longs */
-
-	    textarea,
-	    table,
-	    td,
-	    th,
-	    code,
-	    pre,
-	    samp {
-	        -webkit-hyphens: auto; /* césure propre */
-	        -moz-hyphens: auto;
-	        hyphens: auto;
-	        word-wrap: break-word; /* passage à la ligne forcé */
-	    }
-
-	    /* Passer à une seule colonne (à appliquer aux éléments multi-colonnes) */
-
-	    element1,
-	    element2 {
-	        float: none;
-	        width: auto;
-	    }
-
-	    /* masquer les éléments superflus */
-
-	    .hide_mobile {
-	        display: none !important;
+					font-size:14px;
+					background-color:darkgrey;
 	    }
 
 	    /* Un message personnalisé */
 
-	    body:before {
+	    /*
+			body:before {
 	        content: "Version mobile";
 	        display: block;
 	        text-align: center;
 	        font-style: italic;
 	        color: #777;
 	    }
+			*/
 
 			#titre_principal {
 				background-color:grey;
 				font-size:1rem;
 				padding:0.2rem;
+				padding-top:0.3rem;
 				color:white;
-				text-align:left;
+				text-align:center;
 			}
 
 			/* onglets */
@@ -426,19 +382,200 @@ Copyright (C) 2012-2015  Patrick CARDONA - JECHO
 				margin-top:0;
 				border:thin lightgrey solid;
 				border-bottom:thin white solid;
-				border-top-left-radius: 0.25rem 0.25rem;
-				border-top-right-radius: 0.25rem 0.25rem;
 			}
 
 
 			menu{
-				margin-left:0.25rem;
-				margin-right:0.25rem;
-				padding-top:6px;
+				margin:0rem;
+				padding:0rem;
 				border: thin grey solid;
-				border-radius: 0.25em 0.25em;
 				background-color: lightgrey;
+				height:auto;
 			}
+
+			#onglets{
+				padding-bottom:1.4rem;
+			}
+
+			#onglets>div{
+				float:left;
+				padding-left:0.25rem;
+				padding-right:0.25rem;
+				padding-bottom:0.2rem;
+				padding-top:0.2rem;
+				margin-right:0.1rem;
+				background-color:whitesmoke;
+				font-family: sans-serif;
+			}
+
+			#onglets>div.normal{
+				background-color:whitesmoke;
+				border:thin lightgrey solid;
+				color:grey;
+			}
+
+			#onglets>div.focus {
+				background-color:grey;
+				border:thin grey solid;
+				border-bottom:2px white solid;
+				color:white;
+				cursor:not-allowed;
+			}
+
+			section {
+				border-left:thin lightgrey solid;
+				border-right:thin lightgrey solid;
+				border-bottom:thin lightgrey solid;
+				background-color:white;
+			}
+
+			#correction, #solution {
+				font-size: 1.2em;
+				padding-top:1.5em;
+				padding-bottom:1.5em;
+				padding-right:1.5em;
+				padding-left:0.5em;
+				border-top:dotted thick grey;
+			}
+
+			#dictee {
+				font-size: 1.2em;
+			}
+
+			del {
+				color:red;
+			}
+
+			ins {
+				color:green;
+			}
+
+			#section_1 {
+				padding:1.2rem;
+			}
+
+			#auteur {
+				font-variant:small-caps;
+			}
+
+			#ouvrage {
+				font-style:italic;
+			}
+
+			#ecrire {
+					background-color:white;
+			}
+
+			#texte {
+				padding:0.5rem;
+				background-color:white;
+				font-size: 1.2em;
+				line-height: 1.5;
+			}
+
+			#section_1, #section_1_bis {
+				clear:both;
+			}
+
+			#section_2, #section_3 {
+				clear:both;
+				padding:1.2rem;
+			}
+
+			#onglet_mentions>div{
+				padding:1.2rem;
+			}
+
+			#section_4{
+				text-align:center;
+				padding-bottom:1rem;
+			}
+
+			button[type="button"]{
+				background-color:white;
+				color:grey;
+				font-size:0.9em;
+				height: 1.4rem;
+				cursor: pointer;
+				border:thin grey solid;
+			  border-radius: 5px;
+			}
+
+			/* Audio : only for JDicto */
+			/*.audio {
+				padding:1.5em;
+				background-color:#CCCCCC;
+				-moz-border-radius: 10px;
+			    -webkit-border-radius: 10px;
+			    -khtml-border-radius: 10px;
+			    border-radius: 10px;
+			    box-shadow:
+				0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+				0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+			}
+			*/
+
+			/* Gestion des caractères spéciaux */
+
+			#table_spec{
+				margin:0rem;
+				padding:0rem;
+				background-color: whitesmoke;
+			  padding-left:0.1rem;
+				border: thin gainsboro solid;
+			}
+
+			.entete, #actions{
+				display:table;
+				margin-left:0rem;
+				padding:0rem;
+			}
+
+			.spec {
+				list-style-type:none;
+				display:table-cell;
+				margin:0rem;
+				width:2rem;
+				height:1.5rem;
+				padding-top:0.15rem;
+				padding-bottom:0.15rem;
+				text-align:center;
+				vertical-align: bottom;
+				font-size:1em;
+			  border: thin gainsboro solid;
+			  background-color: white;
+				color:grey;
+			}
+
+			#boutons, #car_sel {
+				list-style-type:none;
+				display:table-cell;
+			}
+
+			#car_sel{
+				color: blue;
+			}
+
+			#conteneur::after {
+				content: ""; /* Important, sinon l'élément n'est pas généré. */
+				display: table;
+				clear: both;
+			}
+
+
+			button[disabled] {
+				background-color: whitesmoke;
+				color: lightgrey;
+				cursor: not-allowed;
+			}
+
+			/* pied de page */
+			footer>p{
+				text-align:center;
+				font-size:0.8em;
+				color:white;
+			}
+
 
 	}
 

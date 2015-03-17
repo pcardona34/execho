@@ -7,7 +7,7 @@
     "MSG_CONFIRMATION_1": "Wollen Sie wirklich ganz von vorne anfangen?",
     "LABEL_1": "Anweisungen",
     "LABEL_2": "Übung",
-    "LABEL_3": "Rechtliche Hinweise",
+    "LABEL_3": "Urheberrecht",
     "LABEL_4": "Rechtschreibprüfung",
     "LABEL_5": "Die korrekte Version",
     "LABEL_6": "Mit dem",
@@ -17,7 +17,7 @@
     "BTN_AIDE": "Hilfe",
     "BTN_CORRIGER": "Überprüfen",
     "BTN_INSERER": "Einfügen",
-    "BTN_SOLUTION": "Zeigen richtige Version",
+    "BTN_SOLUTION": "Lösung",
     "BTN_REPRENDRE": "Fortsetzen",
     "BTN_RECOMMENCER": "Neue Suche",
     "tableau_carspec": [
