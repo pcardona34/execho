@@ -1,4 +1,7 @@
-Jecho
+ATTENTION ! Execho est **obsolète**.
+Utilisez plutôt [jecho](https://github.com/pcardona34/jecho) à la place.
+
+Execho (deprecated)
 ======
 
 ( c ) 2012-2019 - Patrick Cardona  \
