@@ -1,29 +1,32 @@
 Jecho
 ======
-( c ) 2012-2019 - Patrick Cardona
-Version: 3.0
 
-Abstract : a Rewriting Exercise
+( c ) 2012-2019 - Patrick Cardona  \
+Release / version : 3.0
+
+**Abstract** : a Rewriting Exercise  \
 fr : un exercice de réécriture
 
-What's new?
+**What's new?**  \
 No JQuery, only HTML5, Pure JS style and CSS.
 
 Mobile version is still a work in progress...
 
-Enjoy the new parameters:
+Enjoy the new parameters...
 
 PARAMETERS
 ==========
-i18n (internationalisation)
 
-Abstract: now, Jecho can display the exercise in english, french (default),
++ i18n (internationalisation)
+
+**Abstract:** now, Jecho can display the exercise in english, french (default),
 spanich, catalan, italian or german.
-To get the desired translation, just call execho.html with the lang parameter.
 
-@param : lang
-@value : cat|de|en|es|fr|it
-Default value: fr
+To get the desired translation, just call execho.html with the `lang` parameter.
+
+        @param : lang
+        @value : cat|de|en|es|fr|it
+        Default value: fr
 
 Syntaxis :
 
@@ -37,10 +40,11 @@ The default data file is called `data.json` and it is in the same folder as
 
 To override this file and getting your own, just use the urljson parameter.
 
-@param : urljson
-@value : URI of your_file.json
+        @param : urljson
+        @value : URI of your_file.json
 
-To create some new data file, see JDicto.
+To create some new data file, see [JDicto](https://github.com/pcardona34/jdicto/).
+
 Default value : `data.json`
 
 Syntaxis :
