@@ -1,5 +1,5 @@
 ATTENTION ! Execho est **obsolète**.
-Utilisez plutôt [jecho](https://github.com/pcardona34/jecho) à la place.
+Utilisez plutôt [ejDicto](https://github.com/pcardona34/ejdicto) à la place, qui en est une version plus évoluée.
 
 Execho (deprecated)
 ======
